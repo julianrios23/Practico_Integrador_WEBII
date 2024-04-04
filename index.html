@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMPORTACIONES JR</title>
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mooli&display=swap">
+  <style>
+	.welcome {
+            text-align: center;
+            margin: 20px;
+			
+        }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #productos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+    }
+
+    .producto {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .producto img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="sticky-section">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nuestraEmpresa.html">Nuestra Empresa</a></li>
+                    <li><a href="nuestrostrabajos.html">Catalogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="welcome">
+            <h1 id="title">JR IMPORTACIONES</h1>
+            <p>Importamos unicamente calidad al precio más bajo del mercado</p>
+			<p>SOLO VENTA MAYORISTA</p>
+        </div>
+    </div>
+	
+	<div class="centro">
+       <p class="texto-centro" data-texto="HACEMOS ENVIOS EN ARGENTINA, BRASIL, URUGUAY, CHILE"> </p>
+
+    </div>
+  
+  <div id="productos"></div>
+
+  <script>
+   
+    fetch('https://fakestoreapi.com/products')
+      .then(response => response.json())
+      .then(data => {
+       
+        data.forEach(producto => {
+          
+          producto.description = `Producto: ${producto.description}`;
+        });
+
+        
+        const productosDiv = document.getElementById('productos');
+        data.forEach(producto => {
+          const productoElement = document.createElement('div');
+          productoElement.classList.add('producto');
+          productoElement.innerHTML = `
+            <h2>${producto.title}</h2>
+            <p><strong>Precio:</strong> $${producto.price}</p>
+            <p><strong>Categoría:</strong> ${producto.category}</p>
+            <p><strong>Descripción:</strong> ${producto.description}</p>
+            <img src="${producto.image}" alt="${producto.title}">
+          `;
+          productosDiv.appendChild(productoElement);
+        });
+      })
+      .catch(error => {
+        
+        console.error('Error:', error);
+      });
+  </script>
+  <div class="columnas">
+        <div class="columna">
+            <p1>TUDS - Universidad de La Punta - San Luis</p1>
+            <p1>Trabajo Práctico Integrador - WEB II </p1>
+        </div>
+        <div class="columna">
+            <p1>Desarrollado por Julian Rios - Todos los derechos resevados - 2024</p1>
+            <p1>mail:julianelsensei@gmail.com</p1>
+			
+        </div>
+</body>
+</html>
