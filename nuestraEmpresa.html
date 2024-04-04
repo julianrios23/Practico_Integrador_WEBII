@@ -12,28 +12,46 @@
             margin: 20px;
 			
         }
-        .contenedor {
-            display: flex;
-            align-items: center;
-        }
-        .imagen-izquierda img {
-            max-width: 700px; 
-            float: left;
-            margin-right: 20px;
-        }
-        .texto-derecha {
-            float: left; 
-            width: calc(100% - 320px); 
-        }
-        p1 {
+        
+		p1 {
     font-size: 15px;
      color: lightcoral;
   }  
-			
+   @keyframes animacionTextoCentro {
+      0% {
+        transform: scale(1);
+        font-size: 15px; 
+      }
+      50% {
+        transform: scale(1.1);
+        font-size: 25px; 
+      }
+      100% {
+        transform: scale(1);
+        font-size: 15px; 
+      }
+    }
+
+    
+    .centro .texto-centro {
+      animation: animacionTextoCentro 4s ease infinite;
+      text-align: center;
+    }
+
+    
+    .centro {
+      text-align: center;
+    }
+
+    .texto-centro {
+      margin: 30px 0;
+    }
+	
+	#cambio-color {
+      display: inline-block;
+    }
     </style>
-	<script>
-		
-		</script>
+	
 	
 </head>
 <body>
@@ -52,13 +70,34 @@
         <div class="welcome">
             <h1 id="title">JR IMPORTACIONES</h1>
             <p>Importamos unicamente calidad al precio más bajo del mercado</p>
-			<p>SOLO VENTA MAYORISTA</p>
+			 <p id="cambio-color">SOLO VENTA MAYORISTA</p>
         </div>
     </div>
 	<div class="centro">
        <p class="texto-centro" data-texto="HACEMOS ENVIOS EN ARGENTINA, BRASIL, URUGUAY, CHILE"> </p>
 
     </div>
+	
+	<script>
+	function cambiarColor() {
+      const parrafo = document.getElementById('cambio-color');
+      const colores = [
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA'
+		];
+
+      let indiceColor = 0;
+
+      setInterval(() => {
+        parrafo.style.color = colores[indiceColor];
+        indiceColor = (indiceColor + 1) % colores.length; 
+      }, 2000); 
+    }
+
+    cambiarColor(); 
+		
+		</script>
    	
  <div class="columnas">
         <div class="columna">

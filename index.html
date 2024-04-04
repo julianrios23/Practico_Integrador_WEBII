@@ -1,48 +1,99 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMPORTACIONES JR</title>
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mooli&display=swap">
-  <style>
-	.welcome {
+    <style>
+        .welcome {
             text-align: center;
             margin: 20px;
 			
         }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
+       p1 {
+    font-size: 15px;
+     color: lightcoral;
+       }
+	   
+	   @keyframes animacionTextoCentro {
+      0% {
+        transform: scale(1);
+        font-size: 10px; 
+      }
+      50% {
+        transform: scale(1.1);
+        font-size: 15px; 
+      }
+      100% {
+        transform: scale(1);
+        font-size: 10px; 
+      }
     }
 
-    h1 {
+    
+    .centro .texto-centro {
+      animation: animacionTextoCentro 4s ease infinite;
       text-align: center;
     }
 
-    #productos {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 20px;
+    
+    .centro {
+      text-align: center;
     }
 
-    .producto {
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 10px;
+    .texto-centro {
+      margin: 30px 0;
     }
+	
+	#cambio-color {
+      display: inline-block;
+    }
+	
+	.carousel {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
 
-    .producto img {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+.carousel img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: lightcoral;
+    padding: 20px 30px;
+    cursor: pointer;
+    border: 2px solid white; 
+    border-radius: 5px;
+}
+
+
+.carousel-button-prev {
+    left: 25px;
+}
+
+.carousel-button-next {
+    right: 25px;
+}
+p1 {
+    font-size: 15px;
+     color: lightcoral;
+  }    
+	   
+    </style>
+	
+	
 </head>
 <body>
-  
-  <div class="sticky-section">
+    <div class="sticky-section">
         <header>
             <nav>
                 <ul>
@@ -57,30 +108,109 @@
         <div class="welcome">
             <h1 id="title">JR IMPORTACIONES</h1>
             <p>Importamos unicamente calidad al precio más bajo del mercado</p>
-			<p>SOLO VENTA MAYORISTA</p>
+			 <p id="cambio-color">SOLO VENTA MAYORISTA</p>
         </div>
     </div>
-	
 	<div class="centro">
        <p class="texto-centro" data-texto="HACEMOS ENVIOS EN ARGENTINA, BRASIL, URUGUAY, CHILE"> </p>
 
     </div>
-  
-  <div id="productos"></div>
+	<div class="carousel">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/b1/c9/47/b1c94799a6928b03989637cacda28604.jpg" alt="Imagen 1">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/df/ab/54/dfab54cff27692383ccf612eb8d92c85.jpg" alt="Imagen 2">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/fb/37/f0/fb37f02f5aa8aa4e09f526490cb94c7f.jpg" alt="Imagen 3">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/fe/58/41/fe5841e31562525246c431ff4788ac44.jpg" alt="Imagen 4">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/8e/c0/d2/8ec0d2f7864d7bf3c2592b0f05d810c4.jpg" alt="Imagen 6">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/6a/ab/21/6aab21c5cd333c21a67065bd48fbbc25.jpg" alt="Imagen 7">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/26/43/5b/26435b1a2f6ef7e5b97114f76114243e.jpg" alt="Imagen 8">
+        <img class="imagen-reducida" src="https://i.pinimg.com/564x/d0/cb/44/d0cb4414178aa4da0f43eb3d0fbb5fdd.jpg" alt="Imagen 9">
+        <img class="imagen-reducida" src="https://i.pinimg.com/564x/58/88/52/58885226f887a963b4bb0395d1f7322f.jpg" alt="Imagen 10">
+        <img class="imagen-reducida" src="https://i.pinimg.com/564x/26/b2/39/26b23980d1abc023418d8f5072e07b56.jpg" alt="Imagen 11">
+        <img class="imagen-reducida" src="https://i.pinimg.com/564x/17/fd/a6/17fda6d66b7fd8a2e0da6a4773cba8bb.jpg" alt="Imagen 12">
+				
+				
+        <button class="carousel-button carousel-button-prev" onclick="prevImage()">Anterior</button>
+        <button class="carousel-button carousel-button-next" onclick="nextImage()">Siguiente</button>
+    </div>
+	
+	 <script>
+    
+      function cambiarColor() {
+      const parrafo = document.getElementById('cambio-color');
+      const colores = [
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA'
+		];
 
-  <script>
-   
-   
+      let indiceColor = 0;
+
+      setInterval(() => {
+        parrafo.style.color = colores[indiceColor];
+        indiceColor = (indiceColor + 1) % colores.length; 
+      }, 2000); 
+    }
+
+    cambiarColor(); 
+	
+	/*carrusel*/
+	let currentImage = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextImage() {
+            currentImage = (currentImage + 1) % images.length;
+            showImage(currentImage);
+        }
+
+        function prevImage() {
+            currentImage = (currentImage - 1 + images.length) % images.length;
+            showImage(currentImage);
+        }
+
+        showImage(currentImage);
+        let intervalId; 
+
+        function startAutoSlide() {
+        intervalId = setInterval(nextImage, 4000); 
+        }
+
+        function stopAutoSlide() {
+        clearInterval(intervalId); 
+        }
+
+        startAutoSlide();         
+        nextButton.addEventListener('click', function() {
+        nextImage();
+        stopAutoSlide(); 
+        startAutoSlide();
+        });
+
+        prevButton.addEventListener('click', function() {
+        prevImage();
+        stopAutoSlide(); 
+        startAutoSlide();
+        });
+        
   </script>
-  <div class="columnas">
+   	
+ <div class="columnas">
         <div class="columna">
             <p1>TUDS - Universidad de La Punta - San Luis</p1>
-            <p1>Trabajo Práctico Integrador - WEB II </p1>
+            <p1>Trabajo Práctico Integrador - WEB I - COM 2</p1>
         </div>
         <div class="columna">
-            <p1>Desarrollado por Julian Rios - Todos los derechos resevados - 2024</p1>
+            <p1>Desarrollado por Julian Rios - Todos los derechos resevados - 2023</p1>
             <p1>mail:julianelsensei@gmail.com</p1>
 			
         </div>
+    </div>
+	
+	
 </body>
 </html>

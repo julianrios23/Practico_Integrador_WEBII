@@ -54,6 +54,9 @@
     font-size: 15px;
      color: lightcoral;
   }  
+  #cambio-color {
+      display: inline-block;
+    }
     </style>
 </head>
 <body>
@@ -72,7 +75,7 @@
         <div class="welcome">
             <h1 id="title">JR IMPORTACIONES</h1>
             <p>Importamos unicamente calidad al precio más bajo del mercado</p>
-			<p>SOLO VENTA MAYORISTA</p>
+			<p id="cambio-color">SOLO VENTA MAYORISTA</p>
         </div>
     </div>
 
@@ -195,7 +198,24 @@
 cerrarMsgBtn.addEventListener('click', function () {
     enviadoMsg.style.display = 'none';
 });
+		
+		function cambiarColor() {
+      const parrafo = document.getElementById('cambio-color');
+      const colores = [
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA'
+		];
 
+      let indiceColor = 0;
+
+      setInterval(() => {
+        parrafo.style.color = colores[indiceColor];
+        indiceColor = (indiceColor + 1) % colores.length; 
+      }, 2000); 
+    }
+
+    cambiarColor(); 
         
     </script>
 

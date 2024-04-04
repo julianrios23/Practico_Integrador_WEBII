@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMPORTACIONES JR</title>
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mooli&display=swap">
-  
-  
   <style>
      .welcome {
             text-align: center;
@@ -15,8 +13,16 @@
 			
         }
 	
-	
-    
+	body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
     #productos {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -32,42 +38,6 @@
     .producto img {
       max-width: 100%;
       height: auto;
-    }
-	p1 {
-    font-size: 15px;
-     color: lightcoral;
-  }  
-   @keyframes animacionTextoCentro {
-      0% {
-        transform: scale(1);
-        font-size: 15px; 
-      }
-      50% {
-        transform: scale(1.1);
-        font-size: 25px; 
-      }
-      100% {
-        transform: scale(1);
-        font-size: 15px; 
-      }
-    }
-
-    
-    .centro .texto-centro {
-      animation: animacionTextoCentro 4s ease infinite;
-      text-align: center;
-    }
-
-    
-    .centro {
-      text-align: center;
-    }
-
-    .texto-centro {
-      margin: 50px 0;
-    }
-	#cambio-color {
-      display: inline-block;
     }
   </style>
 </head>
@@ -87,7 +57,7 @@
         <div class="welcome">
             <h1 id="title">JR IMPORTACIONES</h1>
             <p>Importamos unicamente calidad al precio más bajo del mercado</p>
-			<p id="cambio-color">SOLO VENTA MAYORISTA</p>
+			<p>SOLO VENTA MAYORISTA</p>
         </div>
     </div>
 	<div class="centro">
@@ -120,35 +90,6 @@
        
         console.error('Error:', error);
       });
-	  
-	  function cambiarColor() {
-      const parrafo = document.getElementById('cambio-color');
-      const colores = [
-		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
-		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
-		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA'
-		];
-
-      let indiceColor = 0;
-
-      setInterval(() => {
-        parrafo.style.color = colores[indiceColor];
-        indiceColor = (indiceColor + 1) % colores.length; 
-      }, 2000); 
-    }
-
-    cambiarColor(); 
   </script>
-  <div class="columnas">
-        <div class="columna">
-            <p1>TUDS - Universidad de La Punta - San Luis</p1>
-            <p1>Trabajo Práctico Integrador - WEB II</p1>
-        </div>
-        <div class="columna">
-            <p1>Desarrollado por Julian Rios - Todos los derechos resevados - 2024</p1>
-            <p1>mail:julianelsensei@gmail.com</p1>
-			
-        </div>
-    </div>
 </body>
 </html>
