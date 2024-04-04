@@ -62,7 +62,7 @@
     </div>
 	
 	<div class="centro">
-       <p class="texto-centro" data-texto="HACEMOS ENVIOS EN ARGENTINA, BRASIL, URUGUAY, CHILE"> </p>
+       <p class="texto-centro" data-texto="CATALOGO"> </p>
 
     </div>
   
@@ -70,7 +70,34 @@
 
   <script>
    
-   
+    fetch('https://fakestoreapi.com/products')
+      .then(response => response.json())
+      .then(data => {
+       
+        data.forEach(producto => {
+          
+          producto.description = `Producto: ${producto.description}`;
+        });
+
+        
+        const productosDiv = document.getElementById('productos');
+        data.forEach(producto => {
+          const productoElement = document.createElement('div');
+          productoElement.classList.add('producto');
+          productoElement.innerHTML = `
+            <h2>${producto.title}</h2>
+            <p><strong>Precio:</strong> $${producto.price}</p>
+            <p><strong>Categoría:</strong> ${producto.category}</p>
+            <p><strong>Descripción:</strong> ${producto.description}</p>
+            <img src="${producto.image}" alt="${producto.title}">
+          `;
+          productosDiv.appendChild(productoElement);
+        });
+      })
+      .catch(error => {
+        
+        console.error('Error:', error);
+      });
   </script>
   <div class="columnas">
         <div class="columna">

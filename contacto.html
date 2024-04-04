@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMPORTACIONES JR</title>
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mooli&display=swap">
+    <style>
+        .welcome {
+            text-align: center;
+            margin: 20px;
+			
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        label, input, textarea, span {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+       
+        .enviado-msg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 255, 0, 0.7);
+            padding: 20px 30px;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        
+        .cerrar-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: transparent;
+            color: black;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        p1 {
+    font-size: 15px;
+     color: lightcoral;
+  }  
+    </style>
+</head>
+<body>
+    <div class="sticky-section">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nuestraEmpresa.html">Nuestra Empresa</a></li>
+                    <li><a href="catalogo.html">Catalogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="welcome">
+            <h1 id="title">JR IMPORTACIONES</h1>
+            <p>Importamos unicamente calidad al precio más bajo del mercado</p>
+			<p>SOLO VENTA MAYORISTA</p>
+        </div>
+    </div>
+
+    <div class="centro">
+        <p>¿Tiene alguna pregunta o comentario?</p>
+        <p>Necesita un presupuesto a medida?</p>
+        <p>Llene el formulario y lo contactaremos a la brevedad!!</p>
+    </div>
+
+    <div class="welcome">
+        <p>Formulario de Contacto</p>
+    </div>
+
+    <form id="contactForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <span class="error" id="nombreError"></span>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError"></span>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9,12}" maxlength="12" required>
+        <span>(Solo números sin espacios ni separador)</span>
+        <span class="error" id="telefonoError"></span>
+
+        <label for="consulta">Consulta:</label>
+        <textarea id="consulta" name="consulta" rows="4" required></textarea>
+        <span class="error" id="consultaError"></span>
+
+        <button type="submit">Enviar</button>
+
+        <div class="enviado-msg">
+            Gracias por su consulta!! Le responderemos a la brevedad.
+            <button class="cerrar-btn" id="cerrarMsgBtn">X</button>
+        </div>
+    </form>
+    <div class="centro" id="datosMostrados">
+    
+
+
+    <script>
+       const form = document.getElementById('contactForm');
+        const enviadoMsg = document.querySelector('.enviado-msg');
+        const cerrarMsgBtn = document.getElementById('cerrarMsgBtn');
+        const datosMostrados = document.getElementById('datosMostrados'); 
+
+        form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const nombre = form.nombre.value;
+    const email = form.email.value;
+    const telefono = form.telefono.value;
+    const consulta = form.consulta.value;
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    const nombreError = document.getElementById('nombreError');
+    const emailError = document.getElementById('emailError');
+    const telefonoError = document.getElementById('telefonoError');
+    const consultaError = document.getElementById('consultaError');
+
+    nombreError.textContent = '';
+    emailError.textContent = '';
+    telefonoError.textContent = '';
+    consultaError.textContent = '';
+
+    if (nombre === '') {
+        nombreError.textContent = 'El nombre es obligatorio.';
+    } else if (nombre.length > 30) {
+        nombreError.textContent = 'El nombre debe tener menos de 30 caracteres.';
+    }
+
+    if (email === '') {
+        emailError.textContent = 'El correo electrónico es obligatorio.';
+    } else if (!email.match(emailRegex)) {
+        emailError.textContent = 'El correo electrónico no es válido.';
+    }
+
+    if (telefono === '') {
+        telefonoError.textContent = 'El teléfono es obligatorio.';
+    } else if (!telefono.match(/^[0-9]+$/)) {
+        telefonoError.textContent = 'El teléfono debe contener solo números.';
+    } else if (telefono.length < 9 || telefono.length > 12) {
+        telefonoError.textContent = 'El teléfono debe tener entre 9 y 12 dígitos.';
+    }
+
+    if (consulta === '') {
+        consultaError.textContent = 'La consulta es obligatoria.';
+    } else if (consulta.length > 200) {
+        consultaError.textContent = 'La consulta debe tener menos de 200 caracteres.';
+    }
+
+    if (nombreError.textContent === '' && emailError.textContent === '' && telefonoError.textContent === '' && consultaError.textContent === '') {
+
+        const nombreElement = document.createElement('p');
+        nombreElement.textContent = `Nombre: ${nombre}`;
+
+        const emailElement = document.createElement('p');
+        emailElement.textContent = `Email: ${email}`;
+
+        const telefonoElement = document.createElement('p');
+        telefonoElement.textContent = `Teléfono: ${telefono}`;
+
+        const consultaElement = document.createElement('p');
+        consultaElement.textContent = `Consulta: ${consulta}`;
+
+        datosMostrados.innerHTML = ''; 
+        datosMostrados.appendChild(nombreElement);
+        datosMostrados.appendChild(emailElement);
+        datosMostrados.appendChild(telefonoElement);
+        datosMostrados.appendChild(consultaElement);
+
+        enviadoMsg.style.display = 'block';
+        form.reset();
+    }
+});
+
+cerrarMsgBtn.addEventListener('click', function () {
+    enviadoMsg.style.display = 'none';
+});
+
+        
+    </script>
+
+    <div class="columnas">
+        <div class="columna">
+            <p1>TUDS - Universidad de La Punta - San Luis</p1>
+            <p1>Trabajo Práctico Integrador - WEB II</p1>
+        </div>
+        <div class="columna">
+            <p1>Desarrollado por Julian Rios - Todos los derechos resevados - 2024</p1>
+            <p1>mail:julianelsensei@gmail.com</p1>
+			
+        </div>
+    </div>
+</body>
+</html>

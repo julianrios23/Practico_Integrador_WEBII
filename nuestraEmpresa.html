@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMPORTACIONES JR</title>
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mooli&display=swap">
-  <style>
-	.welcome {
+    <style>
+        .welcome {
             text-align: center;
             margin: 20px;
 			
         }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    #productos {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 20px;
-    }
-
-    .producto {
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 10px;
-    }
-
-    .producto img {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+        .contenedor {
+            display: flex;
+            align-items: center;
+        }
+        .imagen-izquierda img {
+            max-width: 700px; 
+            float: left;
+            margin-right: 20px;
+        }
+        .texto-derecha {
+            float: left; 
+            width: calc(100% - 320px); 
+        }
+        p1 {
+    font-size: 15px;
+     color: lightcoral;
+  }  
+			
+    </style>
+	<script>
+		
+		</script>
+	
 </head>
 <body>
-  
-  <div class="sticky-section">
+    <div class="sticky-section">
         <header>
             <nav>
                 <ul>
@@ -60,27 +55,23 @@
 			<p>SOLO VENTA MAYORISTA</p>
         </div>
     </div>
-	
 	<div class="centro">
        <p class="texto-centro" data-texto="HACEMOS ENVIOS EN ARGENTINA, BRASIL, URUGUAY, CHILE"> </p>
 
     </div>
-  
-  <div id="productos"></div>
-
-  <script>
-   
-   
-  </script>
-  <div class="columnas">
+   	
+ <div class="columnas">
         <div class="columna">
             <p1>TUDS - Universidad de La Punta - San Luis</p1>
-            <p1>Trabajo Práctico Integrador - WEB II </p1>
+            <p1>Trabajo Práctico Integrador - WEB I - COM 2</p1>
         </div>
         <div class="columna">
-            <p1>Desarrollado por Julian Rios - Todos los derechos resevados - 2024</p1>
+            <p1>Desarrollado por Julian Rios - Todos los derechos resevados - 2023</p1>
             <p1>mail:julianelsensei@gmail.com</p1>
 			
         </div>
+    </div>
+	
+	
 </body>
 </html>
