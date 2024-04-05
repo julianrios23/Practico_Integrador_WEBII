@@ -17,35 +17,34 @@
      color: lightcoral;
        }
 	   
-	   @keyframes animacionTextoCentro {
-      0% {
-        transform: scale(1);
-        font-size: 10px; 
-      }
-      50% {
-        transform: scale(1.1);
-        font-size: 15px; 
-      }
-      100% {
-        transform: scale(1);
-        font-size: 10px; 
-      }
-    }
+	  @keyframes animacionTextoCentro {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
 
-    
-    .centro .texto-centro {
-      animation: animacionTextoCentro 4s ease infinite;
-      text-align: center;
-    }
+.centro .texto-centro {
+  animation: animacionTextoCentro 4s ease infinite;
+  text-align: center;
+  font-size: 45px;
+}
 
-    
-    .centro {
-      text-align: center;
-    }
+.centro {
+  text-align: center;
+}
 
-    .texto-centro {
-      margin: 30px 0;
-    }
+.texto-centro {
+  margin: 75px 0;
+}
 	
 	#cambio-color {
       display: inline-block;
@@ -116,21 +115,19 @@ p1 {
 
     </div>
 	<div class="carousel">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/b1/c9/47/b1c94799a6928b03989637cacda28604.jpg" alt="Imagen 1">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/df/ab/54/dfab54cff27692383ccf612eb8d92c85.jpg" alt="Imagen 2">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/fb/37/f0/fb37f02f5aa8aa4e09f526490cb94c7f.jpg" alt="Imagen 3">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/fe/58/41/fe5841e31562525246c431ff4788ac44.jpg" alt="Imagen 4">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/8e/c0/d2/8ec0d2f7864d7bf3c2592b0f05d810c4.jpg" alt="Imagen 6">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/6a/ab/21/6aab21c5cd333c21a67065bd48fbbc25.jpg" alt="Imagen 7">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/26/43/5b/26435b1a2f6ef7e5b97114f76114243e.jpg" alt="Imagen 8">
-        <img class="imagen-reducida" src="https://i.pinimg.com/564x/d0/cb/44/d0cb4414178aa4da0f43eb3d0fbb5fdd.jpg" alt="Imagen 9">
-        <img class="imagen-reducida" src="https://i.pinimg.com/564x/58/88/52/58885226f887a963b4bb0395d1f7322f.jpg" alt="Imagen 10">
-        <img class="imagen-reducida" src="https://i.pinimg.com/564x/26/b2/39/26b23980d1abc023418d8f5072e07b56.jpg" alt="Imagen 11">
-        <img class="imagen-reducida" src="https://i.pinimg.com/564x/17/fd/a6/17fda6d66b7fd8a2e0da6a4773cba8bb.jpg" alt="Imagen 12">
+		<img class="imagen-reducida" src="https://www.oberlo.com/media/1603891214-mando-para-videojuevos.png" alt="Imagen 1">
+		<img class="imagen-reducida" src="https://www.oberlo.com/media/1603891218-cojin-maternindad.png" alt="Imagen 2">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/1b/42/c9/1b42c995bba5cc7e2b9ca0fc118c2d26.jpg" alt="Imagen 3">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/23/0c/64/230c64cc2700de925b757e321d725a70.jpg" alt="Imagen 4">
+		<img class="imagen-reducida" src="https://www.oberlo.com/media/1603891214-secador-de-zapatos.png" alt="Imagen 6">
+		<img class="imagen-reducida" src="https://www.oberlo.com/media/1603891212-estimulador-muscular.png" alt="Imagen 7">
+		<img class="imagen-reducida" src="https://i.pinimg.com/564x/70/db/6a/70db6aa1685be24842fd8e3f95fc3713.jpg" alt="Imagen 8">
+        <img class="imagen-reducida" src="https://i.pinimg.com/564x/c3/db/e7/c3dbe7357b96a2f75406b53d663b507f.jpg" alt="Imagen 9">
+        <img class="imagen-reducida" src="https://i.pinimg.com/564x/51/3e/9a/513e9a4aadb242d381335126e7aa5ecd.jpg" alt="Imagen 10">
+        <img class="imagen-reducida" src="https://i.pinimg.com/736x/36/a5/27/36a5276315b266ef9f37a437d1bb16ca.jpg" alt="Imagen 11">
+        <img class="imagen-reducida" src="https://i.pinimg.com/564x/8f/fa/32/8ffa32c478e8c39852a82ad31970b94b.jpg" alt="Imagen 12">
 				
-				
-        <button class="carousel-button carousel-button-prev" onclick="prevImage()">Anterior</button>
-        <button class="carousel-button carousel-button-next" onclick="nextImage()">Siguiente</button>
+		
     </div>
 	
 	 <script>

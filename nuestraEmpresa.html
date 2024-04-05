@@ -17,39 +17,54 @@
     font-size: 15px;
      color: lightcoral;
   }  
+   
    @keyframes animacionTextoCentro {
-      0% {
-        transform: scale(1);
-        font-size: 15px; 
-      }
-      50% {
-        transform: scale(1.1);
-        font-size: 25px; 
-      }
-      100% {
-        transform: scale(1);
-        font-size: 15px; 
-      }
-    }
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
 
-    
-    .centro .texto-centro {
-      animation: animacionTextoCentro 4s ease infinite;
-      text-align: center;
-    }
+.centro .texto-centro {
+  animation: animacionTextoCentro 4s ease infinite;
+  text-align: center;
+  font-size: 45px;
+}
 
-    
-    .centro {
-      text-align: center;
-    }
+.centro {
+  text-align: center;
+}
 
-    .texto-centro {
-      margin: 30px 0;
-    }
+.texto-centro {
+  margin: 75px 0;
+}
+
 	
 	#cambio-color {
       display: inline-block;
     }
+	
+	.contenedor {
+            display: flex;
+            align-items: center;
+        }
+        .imagen-izquierda img {
+            max-width: 700px; 
+            float: left;
+            margin-right: 20px;
+        }
+        .texto-derecha {
+            float: left; 
+            width: calc(100% - 320px); 
+        }
     </style>
 	
 	
@@ -76,6 +91,48 @@
 	<div class="centro">
        <p class="texto-centro" data-texto="HACEMOS ENVIOS EN ARGENTINA, BRASIL, URUGUAY, CHILE"> </p>
 
+    </div>
+	
+	<div class="contenedor">
+        <div class="imagen-izquierda">
+            <img src="https://www.chilat.com/wp-content/uploads/2019/07/Guia2019-01.jpg" alt="imagen">
+        </div>
+        <div class="texto-derecha">
+            <h1>1 - TRAYECTORIA</h1>
+			<p>Somos una empresa argentina que importa y comercializa desde hace 18 años con absoluta eficiencia, ofreciendo los 
+			mas diversos productos.-</p>
+			
+        </div>
+    </div>
+	
+	
+	
+	<div class="contenedor">
+    <div class="imagen-izquierda">
+        <img src="https://www.chilat.com/wp-content/uploads/2019/07/Guia2019-11.jpg" alt="imagen">
+    </div>
+    <div class="texto-derecha">
+        <h1>2 - PRODUCTOS</h1>
+        <p>Somos importadores de una amplia gama de productos. El sector textil es uno de los pilares de nuestra empresa, seguido
+			del sector tecnológico y maquinaria industrial. Nuestros clientes plantean necesidades, nosotros nos encargamos de poner
+			el producto en todo el MERCOSUR</p>
+    </div>
+	
+</div>
+
+	
+	<div class="contenedor">
+        <div class="imagen-izquierda">
+            <img src="https://www.chilat.com/wp-content/uploads/2019/07/Guia2019-18.jpg" alt="imagen">
+        </div>
+        <div class="texto-derecha">
+            <h1>3 - PROVEEDORES</h1>
+			<p>Actualmente importamos entre 600 a 800 contenedores mensuales garantizando flujo constante de mercancia.</p>
+			<p>También estamos en condiciones de importar tecnologia bio-medica para diversas especialidades.-</p> 
+			<p>Contamos con depósitos en puerto si el cliente no posee capacidad de almacenamiento, así como tambíen 
+				logistica para todo el interior de Argentina</p>
+        </div>
+		
     </div>
 	
 	<script>

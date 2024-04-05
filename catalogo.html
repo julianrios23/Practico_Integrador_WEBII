@@ -36,36 +36,37 @@
 	p1 {
     font-size: 15px;
      color: lightcoral;
-  }  
+  } 
+  
    @keyframes animacionTextoCentro {
-      0% {
-        transform: scale(1);
-        font-size: 15px; 
-      }
-      50% {
-        transform: scale(1.1);
-        font-size: 25px; 
-      }
-      100% {
-        transform: scale(1);
-        font-size: 15px; 
-      }
-    }
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
 
-    
-    .centro .texto-centro {
-      animation: animacionTextoCentro 4s ease infinite;
-      text-align: center;
-    }
+.centro .texto-centro {
+  animation: animacionTextoCentro 4s ease infinite;
+  text-align: center;
+  font-size: 45px;
+}
 
-    
-    .centro {
-      text-align: center;
-    }
+.centro {
+  text-align: center;
+}
 
-    .texto-centro {
-      margin: 50px 0;
-    }
+.texto-centro {
+  margin: 75px 0;
+}
+
 	#cambio-color {
       display: inline-block;
     }
@@ -87,7 +88,7 @@
         <div class="welcome">
             <h1 id="title">JR IMPORTACIONES</h1>
             <p>Importamos unicamente calidad al precio más bajo del mercado</p>
-			<p id="cambio-color">SOLO VENTA MAYORISTA</p>
+			<h2 id="cambio-color">SOLO VENTA MAYORISTA</p>
         </div>
     </div>
 	<div class="centro">
