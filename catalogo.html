@@ -69,6 +69,8 @@
 	#cambio-color {
       display: inline-block;
     }
+	
+	
   </style>
 </head>
 <body>
@@ -78,7 +80,8 @@
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nuestraEmpresa.html">Nuestra Empresa</a></li>
-                    <li><a href="catalogo.html">Catalogo</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+					<li><a href="carrito.html">Carrito</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
@@ -99,27 +102,32 @@
 
   <script>
     
-    fetch('https://fakestoreapi.com/products')
+      fetch('https://fakestoreapi.com/products')
       .then(response => response.json())
       .then(data => {
-       
-        const productosDiv = document.getElementById('productos');
-        data.forEach(producto => {
-          const productoElement = document.createElement('div');
-          productoElement.classList.add('producto');
-          productoElement.innerHTML = `
-            <h2>${producto.title}</h2>
-            <p><strong>Precio:</strong> $${producto.price}</p>
-            <p><strong>Categoría:</strong> ${producto.category}</p>
-            <img src="${producto.image}" alt="${producto.title}">
-          `;
-          productosDiv.appendChild(productoElement);
-        });
-      })
-      .catch(error => {
-       
-        console.error('Error:', error);
-      });
+      const productosDiv = document.getElementById('productos');
+      data.forEach(producto => {
+      const productoElement = document.createElement('div');
+      productoElement.classList.add('producto');
+      productoElement.innerHTML = `
+        <h2>${traducirTexto(producto.title)}</h2>
+        <p><strong>${traducirTexto('Precio')}:</strong> $${producto.price}</p>
+        <p><strong>${traducirTexto('Categoría')}:</strong> ${traducirTexto(producto.category)}</p>
+        <img src="${producto.image}" alt="${producto.title}">
+      `;
+      productosDiv.appendChild(productoElement);
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
+function traducirTexto(texto) {
+  
+  return texto;
+}
+
 	  
 	  function cambiarColor() {
       const parrafo = document.getElementById('cambio-color');
