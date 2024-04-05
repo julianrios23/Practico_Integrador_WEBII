@@ -86,7 +86,30 @@ p1 {
     font-size: 15px;
      color: lightcoral;
   }    
-	   
+	  
+	  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 10px;
+}
+
+
+.grid-item {
+  background-size: cover;
+  background-position: center;
+  height: 300px; 
+  transition: transform 0.3s ease;
+  border: 2px solid transparent; 
+}
+
+.grid-item:hover {
+  transform: scale(1.1); 
+  border-color: #333;
+}
+
+
+
+
     </style>
 	
 	
@@ -114,21 +137,34 @@ p1 {
        <p class="texto-centro" data-texto="HACEMOS ENVIOS EN ARGENTINA, BRASIL, URUGUAY, CHILE"> </p>
 
     </div>
-	<div class="carousel">
-		<img class="imagen-reducida" src="https://www.oberlo.com/media/1603891214-mando-para-videojuevos.png" alt="Imagen 1">
-		<img class="imagen-reducida" src="https://www.oberlo.com/media/1603891218-cojin-maternindad.png" alt="Imagen 2">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/1b/42/c9/1b42c995bba5cc7e2b9ca0fc118c2d26.jpg" alt="Imagen 3">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/23/0c/64/230c64cc2700de925b757e321d725a70.jpg" alt="Imagen 4">
-		<img class="imagen-reducida" src="https://www.oberlo.com/media/1603891214-secador-de-zapatos.png" alt="Imagen 6">
-		<img class="imagen-reducida" src="https://www.oberlo.com/media/1603891212-estimulador-muscular.png" alt="Imagen 7">
-		<img class="imagen-reducida" src="https://i.pinimg.com/564x/70/db/6a/70db6aa1685be24842fd8e3f95fc3713.jpg" alt="Imagen 8">
-        <img class="imagen-reducida" src="https://i.pinimg.com/564x/c3/db/e7/c3dbe7357b96a2f75406b53d663b507f.jpg" alt="Imagen 9">
-        <img class="imagen-reducida" src="https://i.pinimg.com/564x/51/3e/9a/513e9a4aadb242d381335126e7aa5ecd.jpg" alt="Imagen 10">
-        <img class="imagen-reducida" src="https://i.pinimg.com/736x/36/a5/27/36a5276315b266ef9f37a437d1bb16ca.jpg" alt="Imagen 11">
-        <img class="imagen-reducida" src="https://i.pinimg.com/564x/8f/fa/32/8ffa32c478e8c39852a82ad31970b94b.jpg" alt="Imagen 12">
-				
-		
-    </div>
+	
+	<div class="grid-container">
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/43/0d/a7/430da7082577a069e2f29005d4bc0f37.jpg" alt="Imagen 1"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/c1/fb/c3/c1fbc375c47b49954c72c1a541405a3f.jpg" alt="Imagen 2"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/e8/cf/22/e8cf22e52fe5b9c1bfbe6da02b707bf9.jpg" alt="Imagen 3"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/44/d1/87/44d18768941989a7e2a8863ca55aa8fe.jpg" alt="Imagen 4"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/02/d9/f7/02d9f7343c53896215bd48fe8b618d9e.jpg" alt="Imagen 5"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/37/9c/49/379c49cb0a4478522967de93551e1747.jpg" alt="Imagen 6"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/48/c4/35/48c43572ec7e99db7177fac880b418e0.jpg" alt="Imagen 7"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/d1/99/1b/d1991bc7d45183b1258b5fb85fabd121.jpg" alt="Imagen 8"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/f9/92/91/f9929111e12664461633c9a61b901704.jpg" alt="Imagen 9"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/0b/99/61/0b99611d9d6c3203d3b1959db2fc9c18.jpg" alt="Imagen 10"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/b1/35/0c/b1350ce704660e7067998d6b902e5102.jpg" alt="Imagen 11"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/82/4f/c0/824fc0d643f0bcf6fd35d388148eb4f7.jpg" alt="Imagen 12"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/ec/a1/bb/eca1bbcf5ddf2e7f7f81edde28b231c8.jpg" alt="Imagen 13"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/ec/3f/34/ec3f34752ecd75119b888e769265b7fb.jpg" alt="Imagen 14"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/d2/88/46/d288468239cc460f7e8c77e0198d5a39.jpg" alt="Imagen 15"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/6b/0a/39/6b0a39909e212a4217f320457a927556.jpg" alt="Imagen 16"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/e0/ef/b1/e0efb1f6b822fc5c1177b7a79005ddd0.jpg" alt="Imagen 17"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/64/a3/d6/64a3d65d8df201b76e3c1863ac678699.jpg" alt="Imagen 18"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/e2/65/45/e26545a41f99831238c0c3abaa497b64.jpg" alt="Imagen 19"></div>
+  <div class="grid-item" data-src="https://i.pinimg.com/564x/62/68/1f/62681f830f24132e2afeb8cfc58e3dd2.jpg" alt="Imagen 20"></div>
+  
+</div>
+
+	
+
+	 
 	
 	 <script>
     
@@ -150,49 +186,23 @@ p1 {
 
     cambiarColor(); 
 	
-	/*carrusel*/
-	let currentImage = 0;
-        const images = document.querySelectorAll('.carousel img');
+	/*grilla*/
+	document.addEventListener('DOMContentLoaded', function() {
+    const gridItems = document.querySelectorAll('.grid-item');
+  
+    function cargarImagenesDesdeEnlaces() {
+    gridItems.forEach((item) => {
+	const imageUrl = item.dataset.src;
+    item.style.backgroundImage = `url(${imageUrl})`;
+    });
+  }
+ 
+    cargarImagenesDesdeEnlaces();
+});
 
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.style.display = i === index ? 'block' : 'none';
-            });
-        }
 
-        function nextImage() {
-            currentImage = (currentImage + 1) % images.length;
-            showImage(currentImage);
-        }
-
-        function prevImage() {
-            currentImage = (currentImage - 1 + images.length) % images.length;
-            showImage(currentImage);
-        }
-
-        showImage(currentImage);
-        let intervalId; 
-
-        function startAutoSlide() {
-        intervalId = setInterval(nextImage, 4000); 
-        }
-
-        function stopAutoSlide() {
-        clearInterval(intervalId); 
-        }
-
-        startAutoSlide();         
-        nextButton.addEventListener('click', function() {
-        nextImage();
-        stopAutoSlide(); 
-        startAutoSlide();
-        });
-
-        prevButton.addEventListener('click', function() {
-        prevImage();
-        stopAutoSlide(); 
-        startAutoSlide();
-        });
+	
+       
         
   </script>
    	
