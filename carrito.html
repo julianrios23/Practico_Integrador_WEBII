@@ -54,8 +54,44 @@
 p1 {
     font-size: 15px;
      color: lightcoral;
-  }    
-	  
+  } 
+  
+   
+        #contenedor-carrito {
+            border: 5px solid #ccc;
+            border-radius: 20px;
+            padding: 30px; 
+            background-color: black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 35px; 
+			
+        }
+
+        h1 {
+            margin-top: 0;
+			
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+       
+        button {
+            padding: 20px 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+		 
 	 
 
     </style>
@@ -67,7 +103,7 @@ p1 {
         <header>
             <nav>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html">Início</a></li>
                     <li><a href="nuestraEmpresa.html">Nuestra Empresa</a></li>
                    <li><a href="catalogo.html">Catálogo</a></li>
 					<li><a href="carrito.html">Carrito</a></li>
@@ -85,18 +121,36 @@ p1 {
 	<div class="centro">
        <p class="texto-centro" data-texto="HACEMOS ENVIOS EN ARGENTINA, BRASIL, URUGUAY, CHILE"> </p>
 
+	 <div id="contenedor-carrito">
+        <h1>Carrito de Compras</h1>
+        <p>Total: $0.00</p>
+		<button>Comprar</button>
+        <button>Vaciar carrito</button>
     </div>
-	
 	
 	 
 	
 	 <script>
-    
-      
-	
        
-        
-  </script>
+		
+		function cambiarColor() {
+      const parrafo = document.getElementById('cambio-color');
+      const colores = [
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA'
+		];
+
+      let indiceColor = 0;
+
+      setInterval(() => {
+        parrafo.style.color = colores[indiceColor];
+        indiceColor = (indiceColor + 1) % colores.length; 
+      }, 2000); 
+    }
+
+    cambiarColor(); 
+    </script>
    	
  <div class="columnas">
         <div class="columna">
