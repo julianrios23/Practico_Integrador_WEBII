@@ -92,7 +92,7 @@
 }
 
 	#cambio-color {
-      display: inline-block;
+	display: inline-block;
     }
   </style>
 </head>
@@ -101,7 +101,7 @@
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html">Início</a></li>
           <li><a href="nuestraEmpresa.html">Nuestra Empresa</a></li>
           <li><a href="catalogo.html">Catálogo</a></li>
           <li><a href="carrito.html">Carrito</a></li>
@@ -136,7 +136,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-    axios.get('https://fakestoreapi.com/products')
+	axios.get('https://fakestoreapi.com/products')
       .then(response => {
         const productosDiv = document.getElementById('productos');
         response.data.forEach(producto => {
@@ -160,6 +160,28 @@
       // Implementa tu lógica de traducción aquí si es necesario
       return texto;
     }
+
+	
+	function cambiarColor() {
+      const parrafo = document.getElementById('cambio-color');
+      const colores = [
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA',
+		'#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33EA'
+		];
+
+      let indiceColor = 0;
+
+      setInterval(() => {
+        parrafo.style.color = colores[indiceColor];
+        indiceColor = (indiceColor + 1) % colores.length; 
+      }, 2000); 
+    }
+
+    cambiarColor(); 
+	
+	
+
   </script>
   
   
